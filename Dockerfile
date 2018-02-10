@@ -15,6 +15,7 @@ ENV LDAP_PROTOCOL=ldap ADOP_INTERNAL_LDAP=true
 USER root
 COPY resources/gerrit-entrypoint.sh ${GERRIT_HOME}/
 RUN chmod +x ${GERRIT_HOME}/gerrit*.sh
+RUN mkdir -p /var/git/repos
 
 # Add libraries
 COPY resources/lib/mysql-connector-java-5.1.21.jar ${GERRIT_HOME}/site_ext/lib/mysql-connector-java-5.1.21.jar
